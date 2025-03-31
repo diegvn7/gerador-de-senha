@@ -1,5 +1,6 @@
 let sliderElement = window.document.querySelector('#slider')
 let buttonElement = window.document.querySelector('#button')
+let tooltipElemnt = window.document.querySelector('.tooltip')
 
 let sizePassword = window.document.querySelector('#valor')
 let password = window.document.querySelector('#password')
@@ -24,8 +25,10 @@ function generatePassword() {
     conteinerPassword.classList.remove('hide')
     password.innerHTML = pass
     newPassword = pass
+    tooltipElemnt.innerHTML = 'Clique na senha para copiar'
 }
 
 function copyPassword() {
     navigator.clipboard.writeText(newPassword)
+    tooltipElemnt.innerHTML = 'Copiado!'
 }
